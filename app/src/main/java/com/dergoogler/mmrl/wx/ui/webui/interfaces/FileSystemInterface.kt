@@ -46,7 +46,7 @@ fun JavaScriptRegistry.fileSystemInterface() = namespace("fs") {
         sufile(path).inputStream(flags, mode).reader(charset).use { it.readText() }
     }
 
-    dangerousAsyncFunction("readFileSync", Permissions.MX.IO) {
+    dangerousFunction("readFileSync", Permissions.MX.IO) {
         val path = checkString(0)
         val options = optObject(1)
         val charset = options.charset()
