@@ -69,6 +69,8 @@ jobs:
     needs: build-release
     uses: ./.github/workflows/github.yml
     secrets: inherit
+    permissions:
+      contents: write
 
   # Release to Play Store
   release-playstore:
